@@ -4,7 +4,9 @@ import sqlite3
 conn = sqlite3.connect('diona.db')
 c = conn.cursor()
 
-c.execute("""CREATE TABLE User (
+
+
+''' c.execute("""CREATE TABLE User (
            userID integer,
            userName text,
            userEmail text
@@ -124,3 +126,11 @@ c.execute("INSERT INTO ASsetDetails VALUES (3, 'Apple 11 MacBook Air', 'Laptops'
 c.execute("INSERT INTO ASsetDetails VALUES (4, 'Samsung Galaxy Tab S5e', 'Tablets')")
 
 c.execute("INSERT INTO ASsetDetails VALUES (5, 'Google Pixel 4', 'Mobiles')")
+
+
+
+
+c.execute("Drop TABLE AssetTablets")
+c.execute("Drop TABLE AssetType")
+
+'''
