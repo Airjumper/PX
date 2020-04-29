@@ -20,6 +20,7 @@ c.execute("INSERT INTO User VALUES (104, 'Brandon Styles', 'brandonstyles@gmail.
 
 c.execute("""CREATE TABLE AssetType (
              typeID integer,
+            
              typeName text
              )""")
 			 
