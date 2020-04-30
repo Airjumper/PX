@@ -22,7 +22,7 @@ app.config['SECRET_KEY'] = 'PX2002'
 def home():
     """Renders the home page."""
     return render_template(
-        'index.html',
+        'welcome.html',
         title='Home Page',
         year=datetime.now().year,
     )
