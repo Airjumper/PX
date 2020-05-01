@@ -139,23 +139,23 @@ def main():
         user2 = ('Harry Potter', 'harrypotter@gmail.com')
         user3 = ('Lucy Liu', 'lucyliu@gmail.com')
         user4 = ('Brandon Styles', 'brandonstyles@gmail.com')
-        #create_user(conn, user)
+        create_user(conn, user)
         #create_user(conn, user2)
         #create_user(conn, user3)
         #create_user(conn, user4)
 
         #create admin
         admin = (4552, 'taron1234')
-        #create_admin(conn, admin)
+        create_admin(conn, admin)
 
          # create an asset type
         asset_type = ('Mobile')
         asset_type2 = ('Laptop')
         asset_type3 = ('Tablet')
-        #asset_type_id = create_asset_type(conn, asset_type)
+        asset_type_id = create_asset_type(conn, asset_type)
         #create_asset_type(conn, asset_type)
         #create_asset_type(conn, asset_type2)
-        create_asset_type(conn, asset_type3)
+        #create_asset_type(conn, asset_type3)
         
         #create asset mobile
         #asset_mobile = (320659036, 5621890567, 'iPhone8Plus')
