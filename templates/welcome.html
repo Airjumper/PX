@@ -10,19 +10,21 @@
 </div>
 
 <div class="row">
+    <div class = "d-flex align-items-center ">
     <div class="col-md-6">
-        <h2>Getting started</h2>
+        <h2>Flask</h2>
         <p>
             Flask gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
             for enjoyable, agile development.
         </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">User View &raquo;</a></p>
+        <p><a class="btn btn-default" href="{{ url_for('home') }}">User View &raquo;</a></p>  
     </div>
     <div class="col-md-6">
         <h2>Get more libraries</h2>
         <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Admin &raquo;</a></p>
+        <p><a class="btn btn-default" href="{{ url_for('~/img/') }}">Admin &raquo;</a></p>
+    </div>
     </div>
 </div>
 
