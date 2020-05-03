@@ -1,5 +1,5 @@
 import sqlite3
-from _sqlite3 import Error
+from sqlite3 import Error
 
 
 def create_connection(db_file):

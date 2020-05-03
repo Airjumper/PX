@@ -55,3 +55,13 @@ def userview():
         title='User View',
         year=datetime.now().year
     )
+
+@app.route('/login')
+def login():
+    """Renders the user page."""
+    return render_template(
+        'login.html',
+        title='Login Page',
+        year=datetime.now().year
+    )
+
