@@ -47,3 +47,11 @@ def about():
         message='Your application description page.'
     )
 
+@app.route('/userview')
+def userview():
+    """Renders the user page."""
+    return render_template(
+        'userview.html',
+        title='User View',
+        year=datetime.now().year
+    )
