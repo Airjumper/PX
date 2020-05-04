@@ -69,6 +69,7 @@ def login():
 def mobile():
     conn = sqlite3.connect(r"diona.db")
     results = conn.execute("SELECT * FROM AssetMobiles")
+    types = conn.execute("SELECT * FROM AssetType")
     colNames = results.description
     
     """Renders the user page."""
@@ -77,6 +78,7 @@ def mobile():
         title='User View',
         tableRows = results,
         headers = colNames,
+        type = types,
         year=datetime.now().year       
     )
 
@@ -84,6 +86,7 @@ def mobile():
 def tablet():
     conn = sqlite3.connect(r"diona.db")
     results = conn.execute("SELECT * FROM AssetTablets")
+    types = conn.execute("SELECT * FROM AssetType")
     colNames = results.description
     
     """Renders the user page."""
@@ -92,6 +95,7 @@ def tablet():
         title='User View',
         tableRows = results,
         headers = colNames,
+        type = types,
         year=datetime.now().year       
     )
 
@@ -99,13 +103,16 @@ def tablet():
 def laptop():
     conn = sqlite3.connect(r"diona.db")
     results = conn.execute("SELECT * FROM AssetLaptops")
+    types = conn.execute("SELECT * FROM AssetType")
     colNames = results.description
     
     """Renders the user page."""
     return render_template(
         'userview.html',
+        
         title='User View',
         tableRows = results,
         headers = colNames,
+        type = types,
         year=datetime.now().year       
     )
