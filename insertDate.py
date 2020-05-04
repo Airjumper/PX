@@ -145,8 +145,8 @@ def main():
         #create_user(conn, user4)
 
         #create admin
-        admin = (4552, 'taron1234')
-        create_admin(conn, admin)
+        #admin = (4552, 'taron1234')
+        #create_admin(conn, admin)
 
          # create an asset type
         asset_type = ('Mobile')
@@ -162,8 +162,8 @@ def main():
         #create_asset_mobile(conn, asset_mobile)
 
         #create asset tablet
-        #asset_tablet = ('Microsoft Surface Pro 7' , 'Microsift', 'i5 8GB', 128260, 'JY5635J', 25165, 225)
-        #create_asset_tablet(conn, asset_tablet)
+        asset_tablet = ('Microsoft Surface Pro 7' , 'Microsift', 'i5 8GB', 128260, 'JY5635J', 25165, 225)
+        create_asset_tablet(conn, asset_tablet)
 
         #create asset laptops
         #asset_laptop = ('6GB' , 'Apple 11 MacBook Air', 'Apple', 126790, 'JY8632J')

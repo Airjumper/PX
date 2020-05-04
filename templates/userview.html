@@ -8,16 +8,15 @@
     <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
 
-<div class="form-group">
+<div>
   <label for="searchBox1">Asset Type : </label>
-  <select class="selectpicker" data-live-search="true" id="searchBox1">
-    <option>   </option>
-    <option data-tokens="Mobile">Mobile</option>
-    <option data-tokens="Laptop">Laptop</option>
-    <option data-tokens="Tablet">Tablet</option>
-    <option data-tokens="Site">Site</option>
+  <select class="custom-select custom-select-lg mb-3" id="searchBox1" onchange="location = this.value;">
+    <option selected> choose asset type </option>
+    <option value ="{{ url_for('user_mobile')}}">Mobile</option>
+    <option >Laptop</option>
+    <option >Tablet</option>
+    <option >Site</option>
   </select>
-  
 </div>
 
 <div class = "container" >
@@ -25,31 +24,26 @@
     <thead>
       <tr>
         <th scope="col"></th>
+        <th scope="col">{{ headers  }}</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Handle</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
       </tr>
     </thead>
+  {%  for line in tableRows: %}
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+        <th scope="row"></th>
+        {%  for x in line: %}
+        <td>{{ x }}</td>
+        {% endfor %}
       </tr>
     </tbody>
+  {% endfor %}
   </table>    
 </div>
 

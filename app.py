@@ -2,20 +2,15 @@
 from datetime import datetime
 from flask import Flask
 from flask import render_template
-from flask_login import LoginManager, UserMixin
-from flask_sqlalchemy import SQLAlchemy
-
+import sqlite3
 
 
 app = Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/vsonline/workspace/PX/diona.db'
-app.config['SECRET_KEY'] = 'PX2002'
-
-
 # login_manager = LoginManager()
 # login_manager.init_app(app)
+
 
 @app.route('/')
 @app.route('/home')
@@ -54,6 +49,7 @@ def userview():
         'userview.html',
         title='User View',
         year=datetime.now().year
+        
     )
 
 @app.route('/login')
@@ -65,3 +61,18 @@ def login():
         year=datetime.now().year
     )
 
+
+@app.route('/userview/mobiles')
+def user_mobile():
+    conn = sqlite3.connect(r"diona.db")
+    results = conn.execute("SELECT * FROM AssetTablets")
+    colNames = conn.execute("select group_concat(name,'|') from pragma_table_info('AssetTablets')")
+
+    """Renders the user page."""
+    return render_template(
+        'userview.html',
+        title='User View',
+        tableRows = results,
+        headers = colNames,
+        year=datetime.now().year       
+    )
