@@ -53,7 +53,7 @@ def main():
         #delete_user(conn, 4);
 
         #delete the asset type from the AssetType Table
-        delete_asset_type(conn, 4);
+        delete_asset_type(conn, 6);
 
 if __name__ == '__main__':
     main()

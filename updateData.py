@@ -169,7 +169,7 @@ def main():
     with conn:
         #update_user(conn, ('Wendy Chun', 'wendychun@yahoo.com', 1))
 
-        update_asset_type(conn, ('Tablets', 3))
+        update_asset_type(conn, ('Laptop', 3))
 
         #update_asset_mobile(conn, (320659036, 5621890567, 'iPhonePro11', 1))
 

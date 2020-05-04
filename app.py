@@ -62,10 +62,40 @@ def login():
     )
 
 
-@app.route('/userview/mobiles')
+@app.route('/userview/mobile')
 def user_mobile():
     conn = sqlite3.connect(r"diona.db")
+    results = conn.execute("SELECT * FROM AssetMobiles")
+    colNames = results.description
+    
+    """Renders the user page."""
+    return render_template(
+        'userview.html',
+        title='User View',
+        tableRows = results,
+        headers = colNames,
+        year=datetime.now().year       
+    )
+
+@app.route('/userview/tablet')
+def user_tablet():
+    conn = sqlite3.connect(r"diona.db")
     results = conn.execute("SELECT * FROM AssetTablets")
+    colNames = results.description
+    
+    """Renders the user page."""
+    return render_template(
+        'userview.html',
+        title='User View',
+        tableRows = results,
+        headers = colNames,
+        year=datetime.now().year       
+    )
+
+@app.route('/userview/laptop')
+def user_laptop():
+    conn = sqlite3.connect(r"diona.db")
+    results = conn.execute("SELECT * FROM AssetLaptops")
     colNames = results.description
     
     """Renders the user page."""
