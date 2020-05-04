@@ -66,8 +66,8 @@ def login():
 def user_mobile():
     conn = sqlite3.connect(r"diona.db")
     results = conn.execute("SELECT * FROM AssetTablets")
-    colNames = conn.execute("select group_concat(name,'|') from pragma_table_info('AssetTablets')")
-
+    colNames = results.description
+    
     """Renders the user page."""
     return render_template(
         'userview.html',

@@ -20,20 +20,15 @@
 </div>
 
 <div class = "container" >
-  <table class="table table-striped">  
+  <table class="table table-striped">    
     <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col">{{ headers  }}</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="row"></th>
+        {%  for line in headers: %}
+        <th> {{ line[0]}} </th>
+        {% endfor %}
       </tr>
-    </thead>
+    </thead> 
   {%  for line in tableRows: %}
     <tbody>
       <tr>
