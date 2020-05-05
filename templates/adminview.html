@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Flask</h1>
+    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div>
+  <label for="searchBox1">Asset Type : </label>
+  <select class="custom-select custom-select-lg mb-3" id="searchBox1" onchange="location = this.value;">
+    <option selected> choose asset type </option>
+    {%  for value in type: %}
+   
+    <option value = "{{ url_for('tablet') }}" >{{ value[1]}} </option>
+    {% endfor %}
+  </select>
+</div>
+<div class = "container" >
+  <table class="table table-striped">    
+    <thead>
+      <tr>
+        <th scope="row"></th>
+        {%  for line in headers: %}
+        <th> {{ line[0]}} </th>
+        {% endfor %}
+      </tr>
+    </thead> 
+  {%  for line in tableRows: %}
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        {%  for x in line: %}
+        <td>{{ x }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  {% endfor %}
+  </table>    
+</div>
+
+{% endblock %}
