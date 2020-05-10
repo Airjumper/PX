@@ -12,9 +12,14 @@
   <label for="searchBox1">Asset Type : </label>
   <select class="custom-select custom-select-lg mb-3" id="searchBox1" onchange="location = this.value;">
     <option selected> choose asset type </option>
-    {%  for value in type: %}
-   
-    <option value = "{{ url_for('tablet') }}" >{{ value[1]}} </option>
+    {% for value in type: %}
+      {% if value[1] == 'Tablet' %}
+      <option value = "{{ url_for('tablet') }}" >{{ value[1]}} </option>
+      {% elif value[1] == 'Mobile'%}
+      <option value = "{{ url_for('mobile') }}" >{{ value[1]}} </option>
+      {% else %}
+      <option value = "{{ url_for('laptop') }}" >{{ value[1]}} </option>
+      {% endif %}
     {% endfor %}
   </select>
 </div>

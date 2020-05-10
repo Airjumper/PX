@@ -6,7 +6,7 @@ import sqlite3
 
 
 app = Flask(__name__)
-
+app.debug = True
 
 # login_manager = LoginManager()
 # login_manager.init_app(app)
